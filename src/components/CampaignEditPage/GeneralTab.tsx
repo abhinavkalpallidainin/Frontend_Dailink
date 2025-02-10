@@ -24,6 +24,16 @@ const GeneralTab: React.FC<GeneralTabProps> = ({ campaign, setCampaign }) => {
           value={campaign.type}
           onChange={(e) => setCampaign({ ...campaign, type: e.target.value })}
           bg="gray.700"
+          borderColor="gray.600"
+          color="gray.200"
+          sx={{
+            option: {
+              backgroundColor: "gray.700",
+              _hover: {
+                backgroundColor: "gray.500",
+              },
+            },
+          }}
         >
           <option value="Outreach">Outreach</option>
           <option value="Messaging">Messaging</option>
@@ -35,6 +45,16 @@ const GeneralTab: React.FC<GeneralTabProps> = ({ campaign, setCampaign }) => {
           value={campaign.status}
           onChange={(e) => setCampaign({ ...campaign, status: e.target.value })}
           bg="gray.700"
+          borderColor="gray.600"
+          color="gray.200"
+          sx={{
+            option: {
+              backgroundColor: "gray.700",
+              _hover: {
+                backgroundColor: "gray.500",
+              },
+            },
+          }}
         >
           <option value="Draft">Draft</option>
           <option value="Active">Active</option>

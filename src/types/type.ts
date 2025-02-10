@@ -151,7 +151,8 @@ export type ActionType =
   | "LIKE_POST"
   | "BOOST_POST"
   | "COMMENT_POST"
-  | "DELAY";
+  | "DELAY"
+  | "FILTER_FIRST_DEGREE_NETWORK";
 
 export interface BaseActionConfig {
   scrapeProfile?: boolean;
@@ -196,6 +197,7 @@ export interface SendMessageConfig extends BaseActionConfig {
 export interface LikePostConfig extends BaseActionConfig {
   postCount: number;
   addComment: boolean;
+  
 }
 
 export interface CommentPostConfig extends BaseActionConfig {

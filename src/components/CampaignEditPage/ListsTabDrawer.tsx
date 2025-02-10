@@ -262,9 +262,13 @@ const ListsTabDrawer: React.FC<ListsTabDrawerProps> = ({
                   <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                     Actions
                   </MenuButton>
-                  <MenuList>
-                    <MenuItem>Export Selected</MenuItem>
-                    <MenuItem>Move to Another List</MenuItem>
+                  <MenuList bg="gray.700">
+                    <MenuItem  _hover={{ bg: "gray.500" }}
+                    color="white"
+                    bg="gray.700">Export Selected</MenuItem>
+                    <MenuItem  _hover={{ bg: "gray.500" }}
+                    color="white"
+                    bg="gray.700">Move to Another List</MenuItem>
                   </MenuList>
                 </Menu>
               </HStack>

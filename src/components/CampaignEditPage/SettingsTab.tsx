@@ -58,7 +58,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({ campaign, setCampaign }) => {
             value={campaign.target_connections || ''}
             onChange={(e) => handleChange('target_connections', e.target.value)}
             bg="gray.700"
-            color="white"
+            borderColor="gray.600"
+            color="gray.200"
+            sx={{
+              option: {
+                backgroundColor: "gray.700",
+                _hover: {
+                  backgroundColor: "gray.500",
+                },
+              },
+            }}
           >
             <option value="">All Connections</option>
             <option value="1st">1st Connections</option>
@@ -74,7 +83,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({ campaign, setCampaign }) => {
             value={campaign.time_zone || ''}
             onChange={(e) => handleChange('time_zone', e.target.value)}
             bg="gray.700"
-            color="white"
+            borderColor="gray.600"
+            color="gray.200"
+            sx={{
+              option: {
+                backgroundColor: "gray.700",
+                _hover: {
+                  backgroundColor: "gray.500",
+                },
+              },
+            }}
           >
             <option value="UTC">UTC</option>
             <option value="America/New_York">Eastern Time</option>
@@ -125,7 +143,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({ campaign, setCampaign }) => {
               value={campaign.execution_window_start || ''}
               onChange={(e) => handleChange('execution_window_start', e.target.value)}
               bg="gray.700"
-              color="white"
+              borderColor="gray.600"
+              color="gray.200"
+              sx={{
+                option: {
+                  backgroundColor: "gray.700",
+                  _hover: {
+                    backgroundColor: "gray.500",
+                  },
+                },
+              }}
               mr={2}
             >
               {[...Array(24)].map((_, i) => (
@@ -139,7 +166,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({ campaign, setCampaign }) => {
               value={campaign.execution_window_end || ''}
               onChange={(e) => handleChange('execution_window_end', e.target.value)}
               bg="gray.700"
-              color="white"
+              borderColor="gray.600"
+              color="gray.200"
+              sx={{
+                option: {
+                  backgroundColor: "gray.700",
+                  _hover: {
+                    backgroundColor: "gray.500",
+                  },
+                },
+              }}
               ml={2}
             >
               {[...Array(24)].map((_, i) => (

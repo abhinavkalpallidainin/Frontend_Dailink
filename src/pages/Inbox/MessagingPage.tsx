@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { format, isToday, isYesterday, isThisYear } from "date-fns";
+import { isToday, isYesterday, isThisYear } from "date-fns";
 import {
   Box,
   VStack,
@@ -34,7 +34,6 @@ import {
 import { useAccount } from "../../contexts/AccountContext";
 
 import { FiSend, FiRefreshCw, FiSearch, FiMoreVertical } from "react-icons/fi";
-import { log } from "console";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -115,7 +114,6 @@ const MessagingPage: React.FC = () => {
           };
         })
       );
-      console.log(chats);
 
       setChats(chatsWithAttendees);
 
@@ -593,7 +591,7 @@ const MessagingPage: React.FC = () => {
                                   <Text>{message.text}</Text>
                                 ) : message.attachments ? (
                                   <a
-                                    href={message.attachments[0].url}
+                                    href={message.attachments[0]?.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                   >

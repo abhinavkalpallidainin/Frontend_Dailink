@@ -13,7 +13,7 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaUserPlus, FaComments, FaThumbsUp, FaSync, FaClock } from 'react-icons/fa';
+import { FaUserPlus, FaComments, FaThumbsUp, FaSync, FaClock,FaFilter } from 'react-icons/fa';
 import { ActionType } from '../../types/type';
 
 interface ActionPaletteProps {
@@ -26,6 +26,7 @@ const MotionButton = motion(Button);
 
 const availableActions = [
   { type: 'SEND_INVITATION' as const, name: 'Invite 2nd and 3rd level contacts', icon: FaUserPlus },
+  { type: 'FILTER_FIRST_DEGREE_NETWORK' as const, name: 'Filter 1st degree network', icon: FaFilter },
   { type: 'SEND_MESSAGE' as const, name: 'Message 1st connections', icon: FaComments },
   { type: 'LIKE_POST' as const, name: 'Like and comment posts and articles', icon: FaThumbsUp },
   { type: 'FOLLOW_UNFOLLOW' as const, name: 'Follow/Unfollow profiles', icon: FaSync },
@@ -59,7 +60,7 @@ const ActionPalette: React.FC<ActionPaletteProps> = ({ isOpen, onClose, onAddAct
               >
                 <Flex align="center" width="100%">
                   <Icon as={action.icon} boxSize={6} mr={4} color="blue.400" />
-                  <Text fontSize="md" fontWeight="medium">
+                  <Text fontSize="md" fontWeight="medium" color="white">
                     {action.name}
                   </Text>
                 </Flex>

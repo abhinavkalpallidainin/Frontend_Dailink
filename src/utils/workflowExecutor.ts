@@ -189,7 +189,7 @@ async function handleSendInvitation(campaignId: number, accountId: string, lead:
     
     if (message.trim() !== '') {
       if (lead.lh_id) {
-        await sendLinkedInInvitation(accountId, lead.lh_id);
+        await sendLinkedInInvitation(accountId, lead.lh_id,message);
         console.log(`Invitation sent successfully to ${lead.id} (${lead.crm_profiles.name})`);
         await campaignService.logExecution(campaignId, 'SEND_INVITATION', 'completed', `Invitation sent successfully to lead ${lead.id} (${lead.crm_profiles.name})`);
       } else {
@@ -231,10 +231,13 @@ async function handleLikePost(campaignId: number, accountId: string, lead: Lead,
   if ('postCount' in config) {
     if (lead.lh_id) {
       const posts = await getLinkedInUserPosts(accountId, lead.lh_id);
+      console.log(lead.lh_id,posts);
+      
       if (posts.length > 0) {
         const postCount = Math.min(posts.length, config.postCount);
         for (let i = 0; i < postCount; i++) {
-          await reactToLinkedInPost(accountId, posts[i].id);
+          await reactToLinkedInPost(accountId, posts[i].social_id
+            );
           await campaignService.logExecution(campaignId, 'LIKE_POST', 'completed', `Liked post ${i + 1}/${postCount} for lead ${lead.id} (${lead.crm_profiles.name})`);
         }
       } else {

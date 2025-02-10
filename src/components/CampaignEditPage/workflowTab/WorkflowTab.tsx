@@ -460,6 +460,17 @@ const WorkflowTab: React.FC<WorkflowTabProps> = ({ campaign, setCampaign }) => {
                   placeholder="Select CRM List"
                   onChange={(e) => setSelectedCRMList(e.target.value)}
                   value={selectedCRMList}
+                  bg="gray.700"
+                  borderColor="gray.600"
+                  color="gray.200"
+                  sx={{
+                    option: {
+                      backgroundColor: "gray.700",
+                      _hover: {
+                        backgroundColor: "gray.500",
+                      },
+                    },
+                  }}
                 >
                   {crmLists.map(list => (
                     <option key={list.id} value={list.id}>{list.name}</option>

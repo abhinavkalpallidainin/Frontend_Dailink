@@ -84,6 +84,7 @@ export interface LinkedInProfile {
 }
 
 export interface LinkedInPost {
+  social_id: string;
   id: string;
   content: string;
   created_at: string;
@@ -359,8 +360,8 @@ export const getLinkedInUserProfile = async (accountId: string, identifier: stri
   return apiRequest(`/api/v1/users/${identifier}`, 'GET', null, queryParams);
 };
 
-export const sendLinkedInInvitation = async (accountId: string, providerId: string): Promise<void> => {
-  await apiRequest('/api/v1/users/invite', 'POST', { account_id: accountId, provider_id: providerId });
+export const sendLinkedInInvitation = async (accountId: string, providerId: string,message:string): Promise<void> => {
+  await apiRequest('/api/v1/users/invite', 'POST', { account_id: accountId, provider_id: providerId,message });
 };
 
 export const getLinkedInUserPosts = async (accountId: string, identifier: string): Promise<LinkedInPost[]> => {

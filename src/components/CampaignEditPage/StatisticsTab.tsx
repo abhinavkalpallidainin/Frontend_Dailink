@@ -45,7 +45,17 @@ const StatisticsTab: React.FC<StatisticsTabProps> = ({ campaign }) => {
       
       <HStack justify="space-between" mb={4}>
         <Heading size="sm">Performance Overview</Heading>
-        <Select placeholder="Select date range" w="200px">
+        <Select placeholder="Select date range" w="200px"  bg="gray.700"
+          borderColor="gray.600"
+          color="gray.200"
+          sx={{
+            option: {
+              backgroundColor: "gray.700",
+              _hover: {
+                backgroundColor: "gray.500",
+              },
+            },
+          }}>
           <option value="7days">Last 7 days</option>
           <option value="30days">Last 30 days</option>
           <option value="allTime">All time</option>
